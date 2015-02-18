@@ -1,0 +1,28 @@
+{
+  "name": "justifizer",
+  "version": "0.0.0",
+  "description": "Simple row based grid layout utility",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/judas-christ/justifizer.git"
+  },
+  "author": "Daniel Hägglund",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/judas-christ/justifizer/issues"
+  },
+  "homepage": "https://github.com/judas-christ/justifizer",
+  "devDependencies": {
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-eslint": "^0.4.3",
+    "gulp-load-plugins": "^0.8.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-replace": "^0.5.2",
+    "gulp-uglify": "^1.1.0"
+  }
+}
