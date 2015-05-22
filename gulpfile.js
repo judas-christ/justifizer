@@ -1,28 +1,49 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 
+var static2000 = require('static2000');
 var del = require('del');
-var pkg = require('./package.json');
+var browserSync = require('browser-sync');
 
 gulp.task('clean', function(cb) {
-	del('dist', cb);
+	del(['*.html', 'js/**/*.js', 'css/**/*.css', 'img'], cb);
 });
 
-gulp.task('scripts', function() {
-	return gulp.src('src/justifizer.js')
-		.pipe($.eslint())
-		.pipe($.header('/*! <%= pkg.name %> v<%= pkg.version %> */\n', { pkg: pkg }))
-		.pipe($.rename('justifizer.dev.js'))
-		.pipe(gulp.dest('dist'))
-		.pipe($.replace('__justifizeRatio__', '__jr'))
-		.pipe($.uglify({ preserveComments: 'some' }))
-		.pipe($.rename('justifizer.min.js'))
-		.pipe(gulp.dest('dist'))
-		.on('error', function(err) {
-			console.error(err);
-		});
+gulp.task('js', function() {
+	return gulp.src('src/js/*.js')
+		.pipe($.uglify())
+		.pipe(gulp.dest('js'));
 });
 
-gulp.task('default', ['scripts'], function() {
-	gulp.watch('src/*.js', ['scripts']);
+gulp.task('css', function() {
+	return gulp.src('src/css/*.scss')
+		.pipe($.sass())
+		.pipe($.autoprefixer())
+		.pipe(gulp.dest('css'))
+		.pipe(browserSync.reload({stream: true}));
+});
+
+gulp.task('html', function() {
+	return static2000()
+		.pipe(gulp.dest('.'));
+});
+
+gulp.task('serve', function(cb) {
+	browserSync({
+		server: {
+			baseDir: '.'
+		}
+	});
+});
+
+gulp.task('default', ['css', 'html', 'js'], function() {
+	gulp.watch('src/js/**/*.js', ['js', browserSync.reload]);
+	gulp.watch('src/css/**/*.scss', ['css']);
+	gulp.watch('src/**/*.jade', ['html', browserSync.reload]);
+
+	browserSync({
+		server: {
+			baseDir: '.'
+		}
+	});
 });

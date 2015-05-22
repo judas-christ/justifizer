@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Justifizer
+    </title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="http://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">
+    <!-- Generated with Static2000 https://github.com/judas-christ/static2000-->
+  </head>
+  <body>
+    <header class="main-header">
+      <h1>Justifizer</h1><a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+    </header><div class="intro"><p>Justifizer is a simple, lightweight, row based gallery layout utility with no dependencies.</p></div><p>With this html</p><pre><code class="language-markup">&lt;div class=&quot;gallery&quot;&gt;
+  &lt;div class=&quot;gallery__item&quot;&gt;
+    &lt;img src=&quot;http://lorempixel.com/250/300/&quot;/&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;gallery__item&quot;&gt;
+    &lt;img src=&quot;http://lorempixel.com/300/300/&quot;/&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;gallery__item&quot;&gt;
+    &lt;img src=&quot;http://lorempixel.com/350/300/&quot;/&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>and this javascript</p><pre><code class="language-javascript">var fixGallery = justifize.bind(null, '.gallery');
+window.onload = fixGallery;
+window.onresize = fixGallery;
+</code></pre><p>you get a gallery looking something like this.</p><div class="gallery"><div class="gallery__item"><img src="http://lorempixel.com/250/300"/></div><div class="gallery__item"><img src="http://lorempixel.com/300/300"/></div><div class="gallery__item"><img src="http://lorempixel.com/350/300"/></div><div class="gallery__item"><img src="http://lorempixel.com/400/300"/></div><div class="gallery__item"><img src="http://lorempixel.com/450/300"/></div><div class="gallery__item"><img src="http://lorempixel.com/500/300"/></div><div class="gallery__item"><img src="http://lorempixel.com/200/300"/></div><div class="gallery__item"><img src="http://lorempixel.com/250/300"/></div><div class="gallery__item"><img src="http://lorempixel.com/300/300"/></div><div class="gallery__item"><img src="http://lorempixel.com/350/300"/></div><div class="gallery__item"><img src="http://lorempixel.com/400/300"/></div><div class="gallery__item"><img src="http://lorempixel.com/450/300"/></div><div class="gallery__item"><img src="http://lorempixel.com/500/300"/></div><div class="gallery__item"><img src="http://lorempixel.com/200/300"/></div><div class="gallery__item"><img src="http://lorempixel.com/250/300"/></div><div class="gallery__item"><img src="http://lorempixel.com/300/300"/></div><div class="gallery__item"><img src="http://lorempixel.com/350/300"/></div><div class="gallery__item"><img src="http://lorempixel.com/400/300"/></div><div class="gallery__item"><img src="http://lorempixel.com/450/300"/></div><div class="gallery__item"><img src="http://lorempixel.com/500/300"/></div><div class="gallery__item"><img src="http://lorempixel.com/200/300"/></div><div class="gallery__item"><img src="http://lorempixel.com/250/300"/></div><div class="gallery__item"><img src="http://lorempixel.com/300/300"/></div><div class="gallery__item"><img src="http://lorempixel.com/350/300"/></div></div>
+    <script src="/js/justifizer.dev.js"></script>
+    <script>
+      var fixGallery = justifize.bind(null, '.gallery');
+      window.onload = fixGallery;
+      window.onresize = fixGallery;
+    </script>
+    <script src="/js/prism.js"></script>
+    <link rel="stylesheet" href="/css/prism.css">
+  </body>
+</html>

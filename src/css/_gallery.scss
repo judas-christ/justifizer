@@ -1,0 +1,13 @@
+.gallery {
+    display: block;
+    position: relative;
+
+    &__item {
+        display: block;
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+}

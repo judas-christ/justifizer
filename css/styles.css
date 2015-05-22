@@ -1,0 +1,35 @@
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-family: "Anonymous Pro", monospace; }
+
+pre, code {
+  font-family: inherit; }
+
+body {
+  padding: 1em; }
+
+.main-header {
+  margin: -1em -1em 0;
+  background-color: #000;
+  color: white;
+  padding: 0 1em; }
+  .main-header h1 {
+    font-size: 3em;
+    font-weight: normal;
+    margin: 0;
+    line-height: 140px; }
+
+.gallery {
+  display: block;
+  position: relative; }
+  .gallery__item {
+    display: block; }
+    .gallery__item img {
+      display: block;
+      width: 100%; }

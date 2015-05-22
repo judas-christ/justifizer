@@ -1,0 +1,38 @@
+---
+title: Justifizer
+template: start
+---
+
+.intro
+  p Justifizer is a simple, lightweight, row based gallery layout utility with no dependencies.
+
+p With this html
+pre
+  code.language-markup
+    = '<div class="gallery">\n'
+    = '  <div class="gallery__item">\n'
+    = '    <img src="http://lorempixel.com/250/300/"/>\n'
+    = '  </div>\n'
+    = '  <div class="gallery__item">\n'
+    = '    <img src="http://lorempixel.com/300/300/"/>\n'
+    = '  </div>\n'
+    = '  <div class="gallery__item">\n'
+    = '    <img src="http://lorempixel.com/350/300/"/>\n'
+    = '  </div>\n'
+    = '</div>\n'
+
+p and this javascript
+pre
+  code.language-javascript.
+    var fixGallery = justifize.bind(null, '.gallery');
+    window.onload = fixGallery;
+    window.onresize = fixGallery;
+
+p you get a gallery looking something like this.
+
+.gallery
+  - var n = 0
+  while n++ < 24
+    - var w = 200 + (n % 7) * 50
+    .gallery__item
+      img(src="http://lorempixel.com/"+ w +"/300")
